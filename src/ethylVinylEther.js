@@ -4,8 +4,8 @@ const DirectManager = require('direct-manager');
 const direct = require('ml-direct');
 
 const SD = require('../../spectra-data');
-const prediction = require('../predictions/triethylamine.json');
-const spectra = require('../spectra/triethylamine.json');
+const prediction = require('../predictions/ethylVinylEther.json');
+const spectra = require('../spectra/ethylVinylEther.json');
 
 const spectraProperties = {
   frequency: 400,
@@ -17,11 +17,11 @@ const spectraProperties = {
   output: 'xy',
 };
 
-const target = spectra.y; // Triethylamine
+const target = spectra.y; // ethylVinylEther
 const directManager = new DirectManager(prediction);
 const boundaries = {
-  lower: [7.062, 2.49, 1.0],
-  upper: [7.262, 2.57, 1.07],
+  lower: [14.589, 7.497, 6.912, 2.164, 6.44, 3.72, 4.16, 4.2, 1.28],
+  upper: [14.789, 7.697, 7.112, 2.364, 6.52, 3.81, 4.19, 4.23, 1.34],
 };
 const buildPredictionFile = directManager.tidyUpSimplifiedParameters();
 
