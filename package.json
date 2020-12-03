@@ -39,18 +39,18 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.16",
     "eslint": "^7.14.0",
     "eslint-config-cheminfo": "^5.2.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.3",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.3",
-    "prettier": "^2.2.0",
-    "rollup": "^2.33.3"
+    "prettier": "^2.2.1",
+    "rollup": "^2.34.0"
   },
   "dependencies": {
-    "direct-manager": "0.0.1",
+    "direct-manager": "0.0.3",
     "fs": "0.0.1-security",
     "ml-direct": "^0.1.0",
     "nmr-simulation": "^1.0.21",
