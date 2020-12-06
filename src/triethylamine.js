@@ -23,7 +23,7 @@ const boundaries = {
   lower: [7.062, 2.49, 1.0],
   upper: [7.262, 2.57, 1.07],
 };
-const buildPredictionFile = directManager.tidyUpSimplifiedParameters();
+const buildPredictionFile = directManager.tidyUpParameters();
 
 const predicted = direct(
   objectiveFunction,
@@ -32,9 +32,20 @@ const predicted = direct(
   { iterations: 25 },
 );
 
-// console.log(predicted);
+let result = {
+  optima: predicted.optima,
+  minFunctionValue: predicted.minFunctionValue,
+  iterations: predicted.iterations,
+  functionCalls: predicted.finalState.fCalls,
+};
 
-fs.appendFileSync(`predicted-${new Date()}`, `${JSON.stringify(predicted)},`);
+// eslint-disable-next-line no-console
+console.log(result);
+
+fs.appendFileSync(
+  `../results/triethylamine-${predicted.iterations}.json`,
+  `${JSON.stringify(result)}`,
+);
 
 function objectiveFunction(parameters) {
   const testSignals = buildPredictionFile(parameters);

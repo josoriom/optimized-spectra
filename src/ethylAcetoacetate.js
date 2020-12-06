@@ -23,7 +23,7 @@ let boundaries = {
   lower: [7.015, 3.42, 4.15, 2.25, 1.25],
   upper: [7.215, 3.48, 4.25, 2.3, 1.32],
 };
-const buildPredictionFile = directManager.tidyUpSimplifiedParameters();
+const buildPredictionFile = directManager.tidyUpParameters();
 
 const predicted = direct(
   objectiveFunction,
@@ -32,9 +32,20 @@ const predicted = direct(
   { iterations: 50 },
 );
 
-// console.log(predicted);
+let result = {
+  optima: predicted.optima,
+  minFunctionValue: predicted.minFunctionValue,
+  iterations: predicted.iterations,
+  functionCalls: predicted.finalState.fCalls,
+};
 
-fs.appendFileSync(`predicted-${new Date()}`, `${JSON.stringify(predicted)},`);
+// eslint-disable-next-line no-console
+console.log(result);
+
+fs.appendFileSync(
+  `../results/ethylAcetoacetate-${predicted.iterations}.json`,
+  `${JSON.stringify(result)}`,
+);
 
 function objectiveFunction(parameters) {
   const testSignals = buildPredictionFile(parameters);
