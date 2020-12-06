@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fs = require('fs');
 
 const DirectManager = require('direct-manager');
@@ -20,17 +21,19 @@ const spectraProperties = {
 const target = spectra.y; // ethylVinylEther
 const directManager = new DirectManager(prediction);
 const boundaries = {
-  lower: [14.248, 6.934, 6.718, 1.772, 6.373, 3.671, 3.899, 4.097, 1.208],
-  upper: [14.448, 7.134, 6.918, 1.972, 6.573, 3.871, 4.099, 4.297, 1.408],
+  lower: [14.248, 6.934, 6.718, 1.772, 6.373, 3.671, 4.097, 3.899, 1.208],
+  upper: [14.448, 7.134, 6.918, 1.972, 6.573, 3.871, 4.297, 4.099, 1.408],
 };
-const buildPredictionFile = directManager.tidyUpSimplifiedParameters();
+const buildPredictionFile = directManager.tidyUpParameters();
 
+console.time('Execution time: ');
 const predicted = direct(
   objectiveFunction,
   boundaries.lower,
   boundaries.upper,
   { iterations: 25 },
 );
+console.timeEnd('Execution time: ');
 
 let result = {
   optima: predicted.optima,
@@ -39,7 +42,6 @@ let result = {
   functionCalls: predicted.finalState.fCalls,
 };
 
-// eslint-disable-next-line no-console
 console.log(result);
 
 fs.appendFileSync(

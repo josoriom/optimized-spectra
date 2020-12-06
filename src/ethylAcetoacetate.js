@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fs = require('fs');
 
 const DirectManager = require('direct-manager');
@@ -25,12 +26,14 @@ let boundaries = {
 };
 const buildPredictionFile = directManager.tidyUpParameters();
 
+console.time('Execution time: ');
 const predicted = direct(
   objectiveFunction,
   boundaries.lower,
   boundaries.upper,
   { iterations: 50 },
 );
+console.timeEnd('Execution time: ');
 
 let result = {
   optima: predicted.optima,
@@ -39,7 +42,6 @@ let result = {
   functionCalls: predicted.finalState.fCalls,
 };
 
-// eslint-disable-next-line no-console
 console.log(result);
 
 fs.appendFileSync(
