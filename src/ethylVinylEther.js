@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 const fs = require('fs');
 
-const DirectManager = require('direct-manager');
+const DirectManager = require('direct-manager').default;
 const direct = require('ml-direct');
 
-const SD = require('../../spectra-data');
+const SD = require('../../../spectra-data');
 const prediction = require('../predictions/ethylVinylEther.json');
 const spectra = require('../spectra/ethylVinylEther.json');
 
@@ -31,7 +31,7 @@ const predicted = direct(
   objectiveFunction,
   boundaries.lower,
   boundaries.upper,
-  { iterations: 25 },
+  { iterations: 1 },
 );
 console.timeEnd('Execution time: ');
 

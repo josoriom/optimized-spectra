@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fs = require('fs');
 
-const DirectManager = require('direct-manager');
+const DirectManager = require('direct-manager').default;
 const direct = require('ml-direct');
 
 const SD = require('../../spectra-data');
