@@ -1,0 +1,157 @@
+{
+    "iterations": 1,
+    "boundaries": [
+        {
+            "atoms": [
+                "dcND`DgPf\\bfTRTHkU@DQDT@RDADj`",
+                "dcND`FgPf\\bbbRtHkTDDQDT@RDADj`"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 6.792,
+                "assessment": 4.8245,
+                "lower": 4.7,
+                "upper": 4.8,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MHPf\\bbbffKSAAQP@Ota@QJh",
+                "dcND`MePfTfYUUn`HJh@GzP`HeT"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 2.796,
+                "assessment": 1.3723,
+                "lower": 1.3,
+                "upper": 1.4,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3",
+                "H5"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MHPf\\bbbffKSAAQP@Ota@QJh",
+                "dcND`MK`f\\bbbtQSCAAEP@Ota@QJh"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.464,
+                "assessment": 0,
+                "lower": 0.364,
+                "upper": 0.564,
+                "selected": false
+            },
+            "atomIDs": [
+                "H3",
+                "H4"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MK`f\\bbbtQSCAAEP@Ota@QJh",
+                "dcND`MePfTfYUUn`HJh@GzP`HeT"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 8.475,
+                "assessment": 5.37,
+                "lower": 5.3,
+                "upper": 5.4,
+                "selected": true
+            },
+            "atomIDs": [
+                "H4",
+                "H5"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`DgPf\\bfTRTHkU@DQDT@RDADj`"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.757,
+                "assessment": 3.22143,
+                "lower": 3.21,
+                "upper": 3.235,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`FgPf\\bbbRtHkTDDQDT@RDADj`"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.552,
+                "assessment": 2.8673,
+                "lower": 2.855,
+                "upper": 2.88,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MHPf\\bbbffKSAAQP@Ota@QJh"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 6.592,
+                "assessment": 6.84645,
+                "lower": 6.844,
+                "upper": 6.85,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MK`f\\bbbtQSCAAEP@Ota@QJh"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 6.642,
+                "assessment": 6.898505,
+                "lower": 6.89,
+                "upper": 6.905,
+                "selected": true
+            },
+            "atomIDs": [
+                "H4"
+            ]
+        },
+        {
+            "atoms": [
+                "dcND`MePfTfYUUn`HJh@GzP`HeT"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 6.529,
+                "assessment": 6.7481,
+                "lower": 6.74,
+                "upper": 6.76,
+                "selected": true
+            },
+            "atomIDs": [
+                "H5"
+            ]
+        }
+    ]
+}
