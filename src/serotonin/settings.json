@@ -1,0 +1,209 @@
+{
+    "iterations": 1,
+    "boundaries": [
+        {
+            "atoms": [
+                "dg}H`Al`fTfYuWVzU``Jja@GzP`HeT",
+                "dg}H`BmPf\\bbbRbqSSppPTUP`C}HPDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 8.433,
+                "assessment": 1.77,
+                "lower": 1.3477,
+                "upper": 1.8477,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`Al`fTfYuWVzU``Jja@GzP`HeT",
+                "dg}H`Il`f\\bbbfReSCJpPQMQ@C}HPDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 2.313,
+                "assessment": 5.8,
+                "lower": 5.6078,
+                "upper": 6.0078,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H6"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`BmPf\\bbbRbqSSppPTUP`C}HPDRj@",
+                "dg}H`Il`f\\bbbfReSCJpPQMQ@C}HPDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.546,
+                "assessment": 0,
+                "lower": 0.001,
+                "upper": 0.002,
+                "selected": false
+            },
+            "atomIDs": [
+                "H2",
+                "H6"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`BmPf\\bbbRbqSSppPTUP`C}HPDRj@",
+                "dg}H`DNpfTfVUUri]ijBB`@GzP`HeT"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.526,
+                "assessment": 0,
+                "lower": 0.001,
+                "upper": 0.002,
+                "selected": false
+            },
+            "atomIDs": [
+                "H2",
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`DNpfTfVUUri]ijBB`@GzP`HeT",
+                "dg}H`Il`f\\bbbfReSCJpPQMQ@C}HPDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.507,
+                "assessment": 0,
+                "lower": 0.001,
+                "upper": 0.002,
+                "selected": false
+            },
+            "atomIDs": [
+                "H3",
+                "H6"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`DfpfTfvYW^gSjiB@hbJ@_iB@bUP",
+                "dg}H`FfpfTfYYw^gSjfB@hbJ@_iB@bUP"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 6.37,
+                "assessment": 4.7,
+                "lower": 4.5044,
+                "upper": 4.9044,
+                "selected": true
+            },
+            "atomIDs": [
+                "H4",
+                "H5"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`Al`fTfYuWVzU``Jja@GzP`HeT"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 6.806,
+                "assessment": 6.8644,
+                "lower": 6.765,
+                "upper": 6.965,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`BmPf\\bbbRbqSSppPTUP`C}HPDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 7.034,
+                "assessment": 7.0934,
+                "lower": 7.0842,
+                "upper": 7.1042,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`DNpfTfVUUri]ijBB`@GzP`HeT"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 7.225,
+                "assessment": 7.282,
+                "lower": 7.1827,
+                "upper": 7.3827,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`DfpfTfvYW^gSjiB@hbJ@_iB@bUP"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.74,
+                "assessment": 3.1009,
+                "lower": 3.09,
+                "upper": 3.12,
+                "selected": true
+            },
+            "atomIDs": [
+                "H4"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`FfpfTfYYw^gSjfB@hbJ@_iB@bUP"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.776,
+                "assessment": 3.3035,
+                "lower": 3.29,
+                "upper": 3.315,
+                "selected": true
+            },
+            "atomIDs": [
+                "H5"
+            ]
+        },
+        {
+            "atoms": [
+                "dg}H`Il`f\\bbbfReSCJpPQMQ@C}HPDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 7.038,
+                "assessment": 7.4085,
+                "lower": 7.3094,
+                "upper": 7.5094,
+                "selected": true
+            },
+            "atomIDs": [
+                "H6"
+            ]
+        }
+    ]
+}
