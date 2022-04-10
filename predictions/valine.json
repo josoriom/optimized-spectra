@@ -1,0 +1,120 @@
+[
+    {
+        "atomIDs": [
+            "15"
+        ],
+        "diaIDs": [
+            "diFD`Di`fTfnZjZhb`GzP`HeT"
+        ],
+        "nbAtoms": 1,
+        "delta": 3.423,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "11"
+                ],
+                "diaID": "diFD`JxPf\\bdTljjZDhA~dHBIU@",
+                "coupling": 6.166,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    },
+    {
+        "atomIDs": [
+            "12",
+            "13",
+            "14"
+        ],
+        "diaIDs": [
+            "diFD`JxPf\\bTTLjjYDHr`GzP`HeT"
+        ],
+        "nbAtoms": 3,
+        "delta": 0.81,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "11"
+                ],
+                "diaID": "diFD`JxPf\\bdTljjZDhA~dHBIU@",
+                "coupling": 6.793,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    },
+    {
+        "atomIDs": [
+            "8",
+            "9",
+            "10"
+        ],
+        "diaIDs": [
+            "diFD`JxPf\\bTTLjjYDhr`GzP`HeT"
+        ],
+        "nbAtoms": 3,
+        "delta": 0.81,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "11"
+                ],
+                "diaID": "diFD`JxPf\\bdTljjZDhA~dHBIU@",
+                "coupling": 6.793,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    },
+    {
+        "atomIDs": [
+            "11"
+        ],
+        "diaIDs": [
+            "diFD`JxPf\\bdTljjZDhA~dHBIU@"
+        ],
+        "nbAtoms": 1,
+        "delta": 1.862,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "diaID": "diFD`JxPf\\bTTLjjYDhr`GzP`HeT",
+                "coupling": 6.793,
+                "multiplicity": "q",
+                "distance": 3
+            },
+            {
+                "assignment": [
+                    "12",
+                    "13",
+                    "14"
+                ],
+                "diaID": "diFD`JxPf\\bTTLjjYDHr`GzP`HeT",
+                "coupling": 6.793,
+                "multiplicity": "q",
+                "distance": 3
+            },
+            {
+                "assignment": [
+                    "15"
+                ],
+                "diaID": "diFD`Di`fTfnZjZhb`GzP`HeT",
+                "coupling": 6.166,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "septd"
+    }
+]
