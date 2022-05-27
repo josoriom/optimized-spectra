@@ -1,20 +1,13 @@
 {
-  "name": "optimized-spectra",
-  "version": "0.0.0",
-  "description": "optimization",
-  "main": "lib/index.js",
-  "module": "src/index.js",
-  "files": [
-    "lib",
-    "src"
-  ],
+  "name": "optimize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "eslint": "eslint src",
-    "eslint-fix": "npm run eslint -- --fix",
-    "prepublishOnly": "rollup -c",
-    "test": "npm run test-coverage && npm run eslint",
-    "test-coverage": "jest --coverage",
-    "test-only": "jest"
+    "clone-spectra-data": "git clone https://github.com/cheminfo-js/spectra-data.git && mv spectra-data/ utils/spectra-data && npm --prefix utils/spectra-data i",
+    "prettier": "prettier --check src",
+    "prettier-write": "prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -50,10 +43,9 @@
     "rollup": "^2.70.1"
   },
   "dependencies": {
-    "direct-manager": "0.0.5",
-    "fs": "0.0.1-security",
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.4",
     "ml-direct": "^0.1.0",
-    "nmr-simulation": "^1.0.21",
-    "spectra-data": "^3.4.11"
+    "direct-manager": "^0.0.5"
   }
 }
