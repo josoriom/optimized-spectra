@@ -64,9 +64,8 @@ const main = async () => {
     functionCalls: predicted.finalState.fCalls,
   };
 
-const re = require
   fs.appendFileSync(
-    `../results/${options.molecule}-${predicted.iterations}.json`,
+    `./results/${options.molecule}-${predicted.iterations}.json`,
     `${JSON.stringify(result)}`,
   );
 };
