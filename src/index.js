@@ -61,12 +61,28 @@ const main = async () => {
     optima: predicted.optima,
     minFunctionValue: predicted.minFunctionValue,
     iterations: predicted.iterations,
-    functionCalls: predicted.finalState.fCalls,
+    finalState: {
+      fCalls: predicted.finalState.fCalls,
+      numberOfRectangles: predicted.finalState.numberOfRectangles,
+      totalIterations: predicted.finalState.totalIterations,
+      originalCoordinates: predicted.finalState.originalCoordinates,
+      middlePoint: Array.from(predicted.finalState.middlePoint),
+      smallerDistance: predicted.finalState.smallerDistance,
+      edgeSizes: predicted.finalState.edgeSizes.map((item) => Array.from(item)),
+      diagonalDistances: predicted.finalState.diagonalDistances,
+      functionValues: predicted.finalState.functionValues,
+      differentDistances: predicted.finalState.differentDistances,
+      smallerValuesByDistance: predicted.finalState.smallerValuesByDistance,
+      choiceLimit: predicted.finalState.choiceLimit
+    }
   };
 
-  fs.appendFileSync(
+  console.log(result)
+
+  fs.writeFileSync(
     `./results/${options.molecule}-${predicted.iterations}.json`,
-    `${JSON.stringify(result)}`,
+    JSON.stringify(result, undefined, 2),
+    { encoding: 'utf8' }
   );
 };
 
