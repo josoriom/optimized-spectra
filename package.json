@@ -45,8 +45,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "direct-manager": "^0.0.5",
-    "inquirer": "^9.1.0",
-    "ml-direct": "^0.1.0",
-    "ncu": "^0.2.1"
+    "inquirer": "^8.0.0",
+    "ml-direct": "^0.1.0"
   }
 }

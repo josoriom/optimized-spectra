@@ -5,7 +5,7 @@ const direct = require('ml-direct');
 const SD = require('./utils/spectra-data');
 
 require('colors');
-const { selectMolecule, pause, askIterations } = require('./utils/menu');
+const { selectMolecule, pause, askIterations } = require('./utils/menu.js');
 
 console.clear();
 
