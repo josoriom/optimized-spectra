@@ -81,7 +81,12 @@ const main = async () => {
 
   fs.writeFileSync(
     `./results/${options.molecule}-${predicted.iterations}.json`,
-    JSON.stringify(result, undefined, 2),
+    JSON.stringify({
+      result,
+      spectra,
+      spectraProperties,
+      prediction
+    }, undefined, 2),
     { encoding: 'utf8' }
   );
 };
