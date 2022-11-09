@@ -80,7 +80,7 @@ const main = async () => {
   console.log(result)
 
   fs.writeFileSync(
-    `./results/${options.molecule}-${predicted.iterations}.json`,
+    `src/results/${options.molecule}-${predicted.iterations}.json`,
     JSON.stringify({
       result,
       spectra,

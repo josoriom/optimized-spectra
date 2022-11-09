@@ -1,3 +1,4 @@
 node_modules/
 # src/utils/results
 src/utils/spectra-data
+package.json
