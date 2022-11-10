@@ -85,7 +85,8 @@ const main = async () => {
       result,
       spectra,
       spectraProperties,
-      prediction
+      prediction,
+      settings
     }, undefined, 2),
     { encoding: 'utf8' }
   );
