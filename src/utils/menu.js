@@ -1,5 +1,5 @@
-const inquirer = require('inquirer');
-require('colors');
+import inquirer from 'inquirer';
+import 'colors';
 
 const menuOptions = [
   {
@@ -89,4 +89,4 @@ const askIterations = async (message) => {
   return iterations.trim();
 };
 
-module.exports = { selectMolecule, pause, askIterations };
+export { selectMolecule, pause, askIterations };

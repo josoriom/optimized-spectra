@@ -1,11 +1,11 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const DirectManager = require('direct-manager').default;
-const direct = require('ml-direct');
-const SD = require('./utils/spectra-data');
+import DirectManager from 'direct-manager';
+import direct from 'ml-direct';
+import SD from './utils/spectra-data';
 
-require('colors');
-const { selectMolecule, pause, askIterations } = require('./utils/menu.js');
+import 'colors';
+import { selectMolecule, pause, askIterations } from './utils/menu.js';
 
 console.clear();
 
@@ -19,9 +19,14 @@ const main = async () => {
     await pause(molecule, parseInt(iterations));
   } while (!options.molecule || !options.iterations);
 
-  const prediction = require(`../molecules/${options.molecule}/prediction.json`);
-  const settings = require(`../molecules/${options.molecule}/settings.json`);
-  const spectra = require(`../molecules/${options.molecule}/spectra.json`);
+  const promises = ['prediction', 'settings', 'spectra'].map(file =>
+    import(
+      `../molecules/${options.molecule}/${file}.json`,
+      { assert: { type: 'json' } }
+    )
+  );
+
+  const [ prediction, settings, spectra ] = await Promise.all(promises);
 
   const spectraProperties = {
     frequency: 400,
