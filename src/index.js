@@ -24,10 +24,10 @@ const main = async () => {
   const spectra = require(`../molecules/${options.molecule}/spectra.json`);
 
   const spectraProperties = {
-    frequency: 400,
-    from: 0,
+    frequency: 500,
+    from: -0.2,
     to: 10,
-    lineWidth: 1.1,
+    lineWidth: 1.5,
     nbPoints: 16384,
     maxClusterSize: 8,
     output: 'xy',
@@ -50,12 +50,14 @@ const main = async () => {
     return result;
   };
 
+  console.time("time: ");
   const predicted = direct(
     objectiveFunction,
     boundaries.lower,
     boundaries.upper,
     { iterations: options.iterations },
   );
+  console.timeEnd("time: ");
 
   const result = {
     optima: predicted.optima,
@@ -77,8 +79,6 @@ const main = async () => {
     }
   };
 
-  console.log(result)
-
   fs.writeFileSync(
     `src/results/${options.molecule}-${predicted.iterations}.json`,
     JSON.stringify({
@@ -86,7 +86,9 @@ const main = async () => {
       spectra,
       spectraProperties,
       prediction,
-      settings
+      settings,
+      signals: directManager.getSignals(),
+      couplings: directManager.couplings
     }, undefined, 2),
     { encoding: 'utf8' }
   );
