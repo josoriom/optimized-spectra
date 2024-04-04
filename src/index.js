@@ -38,7 +38,9 @@ const main = async () => {
   const boundaries = directManager.getBoundaries(settings.boundaries);
   const buildPredictionFile = directManager.tidyUpParameters();
 
+  let counter = 0;
   const objectiveFunction = (parameters) => {
+    console.log({ counter, parameters: Array.from(parameters) })
     const testSignals = buildPredictionFile(parameters);
     const simulation = SD.NMR.fromSignals(testSignals, spectraProperties);
     simulation.setMinMax(0, 1);
@@ -47,6 +49,7 @@ const main = async () => {
     for (let i = 0; i < target.length; i++) {
       result += (target[i] - simulated[i]) ** 2;
     }
+    counter++;
     return result;
   };
 
@@ -58,6 +61,8 @@ const main = async () => {
     { iterations: options.iterations },
   );
   console.timeEnd("time: ");
+
+  console.log({ boundaries });
 
   const result = {
     optima: predicted.optima,
