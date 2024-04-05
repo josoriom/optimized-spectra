@@ -46,6 +46,7 @@
     "colors": "^1.4.0",
     "direct-manager": "^0.0.5",
     "inquirer": "^8.0.0",
-    "ml-direct": "^0.1.0"
+    "ml-direct": "^0.1.0",
+    "ml-spectra-processing": "^14.2.2"
   }
 }

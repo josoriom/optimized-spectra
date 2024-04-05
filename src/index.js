@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const DirectManager = require('direct-manager').default;
-const direct = require('ml-direct');
+const direct = require('./utils/direct.js');
 const SD = require('./utils/spectra-data');
 
 require('colors');
@@ -25,9 +25,9 @@ const main = async () => {
 
   const spectraProperties = {
     frequency: 500,
-    from: -0.2,
-    to: 10,
-    lineWidth: 1.5,
+    from: 0.5,
+    to: 4,
+    lineWidth: 1,
     nbPoints: 16384,
     maxClusterSize: 8,
     output: 'xy',
@@ -40,7 +40,6 @@ const main = async () => {
 
   let counter = 0;
   const objectiveFunction = (parameters) => {
-    console.log({ counter, parameters: Array.from(parameters) })
     const testSignals = buildPredictionFile(parameters);
     const simulation = SD.NMR.fromSignals(testSignals, spectraProperties);
     simulation.setMinMax(0, 1);
@@ -49,18 +48,23 @@ const main = async () => {
     for (let i = 0; i < target.length; i++) {
       result += (target[i] - simulated[i]) ** 2;
     }
+    // console.log({
+    //   counter,
+    //   minimum: result,
+    //   parameters: Array.from(parameters),
+    // });
     counter++;
     return result;
   };
 
-  console.time("time: ");
+  console.time('time: ');
   const predicted = direct(
     objectiveFunction,
     boundaries.lower,
     boundaries.upper,
     { iterations: options.iterations },
   );
-  console.timeEnd("time: ");
+  console.timeEnd('time: ');
 
   console.log({ boundaries });
 
@@ -80,22 +84,26 @@ const main = async () => {
       functionValues: predicted.finalState.functionValues,
       differentDistances: predicted.finalState.differentDistances,
       smallerValuesByDistance: predicted.finalState.smallerValuesByDistance,
-      choiceLimit: predicted.finalState.choiceLimit
-    }
+      choiceLimit: predicted.finalState.choiceLimit,
+    },
   };
 
   fs.writeFileSync(
     `src/results/${options.molecule}-${predicted.iterations}.json`,
-    JSON.stringify({
-      result,
-      spectra,
-      spectraProperties,
-      prediction,
-      settings,
-      signals: directManager.getSignals(),
-      couplings: directManager.couplings
-    }, undefined, 2),
-    { encoding: 'utf8' }
+    JSON.stringify(
+      {
+        result,
+        spectra,
+        spectraProperties,
+        prediction,
+        settings,
+        signals: directManager.getSignals(),
+        couplings: directManager.couplings,
+      },
+      undefined,
+      2,
+    ),
+    { encoding: 'utf8' },
   );
 };
 
