@@ -15,25 +15,17 @@ const menuOptions = [
         name: '2. Dopamine',
         value: 'dopamine',
       },
-      // {
-      //     name: '3. EthylAcetoacetate',
-      //     value: 'ethyl_acetoacetate'
-      // },
-      // {
-      //     name: '4. EthylVinylEther',
-      //     value: 'ethyl_vinyl_ether'
-      // },
       {
         name: '3. Serotonin',
         value: 'serotonin',
       },
-      // {
-      //     name: '6. Triethylamine',
-      //     value: 'triethylamine'
-      // },
       {
         name: '4. Valine',
         value: 'valine',
+      },
+      {
+        name: '5. Arginine',
+        value: 'arginine',
       },
       {
         name: 'Exit',

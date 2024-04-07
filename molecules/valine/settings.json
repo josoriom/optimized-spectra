@@ -34,9 +34,9 @@
       "value": {
         "prediction": 3.423,
         "assessment": 3.6153566529492456,
-        "lower": 3.61,
-        "upper": 3.62,
-        "selected": false
+        "lower": 3.613,
+        "upper": 3.617,
+        "selected": true
       },
       "atomIDs": ["H1"]
     },
@@ -46,9 +46,9 @@
       "value": {
         "prediction": 0.81,
         "assessment": 1.0441495198902606,
-        "lower": 1.04,
-        "upper": 1.05,
-        "selected": false
+        "lower": 1.040,
+        "upper": 1.048,
+        "selected": true
       },
       "atomIDs": ["H2"]
     },
@@ -58,9 +58,9 @@
       "value": {
         "prediction": 0.81,
         "assessment": 0.9938888888888889,
-        "lower": 0.99,
-        "upper": 1.0,
-        "selected": false
+        "lower": 0.990,
+        "upper": 0.998,
+        "selected": true
       },
       "atomIDs": ["H3"]
     },
@@ -70,9 +70,9 @@
       "value": {
         "prediction": 1.862,
         "assessment": 2.274588477366255,
-        "lower": 2.25,
-        "upper": 2.3,
-        "selected": false
+        "lower": 2.27,
+        "upper": 2.28,
+        "selected": true
       },
       "atomIDs": ["H4"]
     }

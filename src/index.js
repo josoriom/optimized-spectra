@@ -27,7 +27,7 @@ const main = async () => {
     frequency: 500,
     from: 0.5,
     to: 4,
-    lineWidth: 1,
+    lineWidth: 0.8,
     nbPoints: 16384,
     maxClusterSize: 8,
     output: 'xy',
@@ -36,7 +36,7 @@ const main = async () => {
   const target = spectra.y;
   const directManager = new DirectManager(prediction);
   const boundaries = directManager.getBoundaries(settings.boundaries);
-  const buildPredictionFile = directManager.tidyUpParameters();
+  const buildPredictionFile = tidyUpParameters(directManager.signals, directManager.couplings);
 
   let counter = 0;
   const objectiveFunction = (parameters) => {
@@ -48,11 +48,7 @@ const main = async () => {
     for (let i = 0; i < target.length; i++) {
       result += (target[i] - simulated[i]) ** 2;
     }
-    // console.log({
-    //   counter,
-    //   minimum: result,
-    //   parameters: Array.from(parameters),
-    // });
+    console.log({ i: counter, min: result, p: Array.from(parameters) });
     counter++;
     return result;
   };
@@ -108,3 +104,42 @@ const main = async () => {
 };
 
 main();
+
+
+function tidyUpParameters(signals, coup) {
+  const result = signals.slice();
+  const couplings = coup.slice();
+  let counter = 0;
+  return (parameters) => {
+    for (const coupling of couplings) {
+      if (!coupling.selected) continue;
+      coupling.coupling = parameters[counter];
+      counter++;
+    }
+    for (const atom of result) {
+      const relatedAtoms = findCoupling(atom.diaIDs[0], couplings);
+      if (atom.selected) {
+        atom.delta = parameters[counter];
+        counter++;
+      }
+
+      for (const jcoupling of atom.j) {
+        const coupling = findCoupling(jcoupling.diaID, relatedAtoms);
+        jcoupling.coupling =
+          coupling.length === 0 ? jcoupling.coupling : coupling[0].coupling;
+      }
+    }
+    counter = 0;
+    return result;
+  };
+}
+
+function findCoupling(id, couplings) {
+  const result = [];
+  for (const coupling of couplings) {
+    for (const value of coupling.ids) {
+      if (value.toLowerCase() === id.toLowerCase()) result.push(coupling);
+    }
+  }
+  return result;
+}
