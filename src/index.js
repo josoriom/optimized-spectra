@@ -27,7 +27,7 @@ const main = async () => {
     frequency: 500,
     from: 0.5,
     to: 4,
-    lineWidth: 0.8,
+    lineWidth: 1.2,
     nbPoints: 16384,
     maxClusterSize: 8,
     output: 'xy',
@@ -35,8 +35,8 @@ const main = async () => {
 
   const target = spectra.y;
   const directManager = new DirectManager(prediction);
-  const boundaries = directManager.getBoundaries(settings.boundaries);
-  const buildPredictionFile = tidyUpParameters(directManager.signals, directManager.couplings);
+  const boundaries = getBoundaries(settings.boundaries, directManager);
+  const buildPredictionFile = tidyUpParameters(directManager.signals, directManager.couplings, settings.boundaries);
 
   let counter = 0;
   const objectiveFunction = (parameters) => {
@@ -105,8 +105,108 @@ const main = async () => {
 
 main();
 
+function getBoundaries(parameters, instance, options  = {} ) {
+  const { error = 0.1 } = options;
+  instance.signals = getSignals(instance.prediction);
+  if (parameters) {
+    const currentParameters = parameters.slice();
+    for (let i = 0; i < parameters.length; i++) {
+      currentParameters[i].value.assessment = parameters[i].value.assessment;
+      currentParameters[i].value.selected = parameters[i].value.selected;
+      currentParameters[i].value.lower = parameters[i].value.lower;
+      currentParameters[i].value.upper = parameters[i].value.upper;
+    }
+    instance.parameters = currentParameters;
+  } else {
+    instance.parameters = instance.suggestBoundaries({ error });
+  }
+  updateSignals(instance.parameters, instance);
+  const result = { lower: [], upper: [] };
+  for (const parameter of instance.parameters) {
+    if (!parameter.value.selected) continue;
+    result.lower.push(parameter.value.lower);
+    result.upper.push(parameter.value.upper);
+  }
+  return result;
+}
 
-function tidyUpParameters(signals, coup) {
+function getSignals(json) {
+  const predictions = JSON.parse(JSON.stringify(json));
+  for (const prediction of predictions) {
+    prediction.selected =
+      typeof prediction.selected === 'boolean' ? prediction.selected : true;
+    for (const coupling of prediction.j) {
+      coupling.selected =
+        typeof coupling.selected === 'boolean' ? coupling.selected : true;
+    }
+  }
+  return predictions;
+}
+
+
+function updateSignals(parameters, instance) {
+  if (parameters === undefined) return;
+  for (const parameter of parameters) {
+    const atoms = parameter.atoms;
+    const deltaIndex = instance.signals.findIndex(
+      (item) => item.diaIDs[0] === atoms[0],
+    );
+    if (parameter.type === 'delta') {
+      instance.signals[deltaIndex].selected = parameter.value.selected;
+      instance.signals[deltaIndex].delta = parameter.value.assessment;
+    } else if (parameter.type === 'coupling') {
+      const jOneIndex = getCouplingIndex(
+        atoms[1],
+        parameter.value.prediction,
+        instance.prediction[deltaIndex].j,
+      );
+      const delta2Index = instance.signals.findIndex(
+        (item) => {
+          return item.diaIDs[0] === atoms[1]
+        },
+      );
+      
+      const jTwoIndex = getCouplingIndex(
+        atoms[0],
+        parameter.value.prediction,
+        instance.prediction[delta2Index].j,
+      );
+      for (const index of jOneIndex) {
+        instance.signals[deltaIndex].j[index].selected = parameter.value.selected;
+        instance.signals[deltaIndex].j[index].coupling =
+          parameter.value.assessment;
+      }
+
+      for (const index of jTwoIndex) {
+        instance.signals[delta2Index].j[index].selected =
+          parameter.value.selected;
+          instance.signals[delta2Index].j[index].coupling =
+          parameter.value.assessment;
+      }
+    }
+  }
+  instance.couplings = getCouplings(instance.signals);
+}
+
+function getCouplingIndex(id, value, couplings) {
+  let counter = 0;
+  const couplingId = [];
+  for (const coupling of couplings) {
+    if (coupling.diaID === id) {
+      if (coupling.coupling === value) {
+        couplingId.push(counter);
+        continue;
+      }
+      if (coupling.coupling.toPrecision(2) === value.toPrecision(2)) {
+        couplingId.push(counter);
+      }
+    }
+    counter++;
+  }
+  return couplingId;
+}
+
+function tidyUpParameters(signals, coup, settings) {
   const result = signals.slice();
   const couplings = coup.slice();
   let counter = 0;
@@ -119,7 +219,7 @@ function tidyUpParameters(signals, coup) {
     for (const atom of result) {
       const relatedAtoms = findCoupling(atom.diaIDs[0], couplings);
       if (atom.selected) {
-        atom.delta = parameters[counter];
+        atom.delta = parameters[getDeltaIndex(atom.diaIDs[0], settings)];
         counter++;
       }
 
@@ -130,7 +230,23 @@ function tidyUpParameters(signals, coup) {
       }
     }
     counter = 0;
+    // console.log(result);
+    // console.log(result.map((item) => (item.j)));
     return result;
+
+    function getDeltaIndex(id, settings) {
+      let result = 0;
+      for (let i = 0; i < settings.length; i++) {
+        const item = settings[i];
+        if (item.atoms.length === 1) {
+          const atomID = item.atoms[0];
+          if (id === atomID) {
+            result = i;
+          }
+        }
+      }
+      return result;
+    }
   };
 }
 
@@ -141,5 +257,32 @@ function findCoupling(id, couplings) {
       if (value.toLowerCase() === id.toLowerCase()) result.push(coupling);
     }
   }
+  return result;
+}
+
+function getCouplings(json) {
+  const predictions = JSON.parse(JSON.stringify(json));
+  const parameters = [];
+  for (const prediction of predictions) {
+    for (const coupling of prediction.j) {
+      const item = { ids: [], coupling: 0, selected: true };
+      item.ids = JSON.parse(JSON.stringify(prediction.diaIDs));
+      item.ids.push(coupling.diaID);
+      item.coupling = coupling.coupling;
+      item.selected =
+        typeof coupling.selected === 'boolean' ? coupling.selected : true;
+      parameters.push(item);
+    }
+  }
+
+  const test = [];
+  const result = parameters.filter((currentValue) => {
+    if (!test.find((item) => item === currentValue.coupling)) {
+      test.push(currentValue.coupling);
+      return true;
+    } else {
+      return false;
+    }
+  }, test);
   return result;
 }

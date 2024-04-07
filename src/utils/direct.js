@@ -113,7 +113,6 @@ function direct(
     //----------------------------------------------------------------------
     //  STEP 2. Identify the set S of all potentially optimal rectangles
     //----------------------------------------------------------------------
-
     let S1 = [];
     let idx = differentDistances.findIndex(
       // eslint-disable-next-line no-loop-func
