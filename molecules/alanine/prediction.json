@@ -1,0 +1,52 @@
+[
+    {
+        "atomIDs": [
+            "9"
+        ],
+        "diaIDs": [
+            "gNxhEVIeIkjiiJ@RHDRj@"
+        ],
+        "nbAtoms": 1,
+        "delta": 3.467,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "6",
+                    "7",
+                    "8"
+                ],
+                "diaID": "gNxhMVIeI[jihj@RHDRj@",
+                "coupling": 7.033,
+                "multiplicity": "q",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "q"
+    },
+    {
+        "atomIDs": [
+            "6",
+            "7",
+            "8"
+        ],
+        "diaIDs": [
+            "gNxhMVIeI[jihj@RHDRj@"
+        ],
+        "nbAtoms": 3,
+        "delta": 1.3389999999999997,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "9"
+                ],
+                "diaID": "gNxhEVIeIkjiiJ@RHDRj@",
+                "coupling": 7.033,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    }
+]

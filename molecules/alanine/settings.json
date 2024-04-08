@@ -1,0 +1,55 @@
+{
+    "iterations": 1,
+    "boundaries": [
+        {
+            "atoms": [
+                "gNxhEVIeIkjiiJ@RHDRj@",
+                "gNxhMVIeI[jihj@RHDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 7.033,
+                "assessment": 7.033,
+                "lower": 6.0,
+                "upper": 7.5,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "gNxhEVIeIkjiiJ@RHDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 3.790,
+                "assessment": 3.795,
+                "lower": 3.790,
+                "upper": 3.795,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1"
+            ]
+        },
+        {
+            "atoms": [
+                "gNxhMVIeI[jihj@RHDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 1.3389999999999997,
+                "assessment": 1.3389999999999997,
+                "lower": 1.482,
+                "upper": 1.486,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2"
+            ]
+        }
+    ]
+}

@@ -21,12 +21,12 @@ const main = async () => {
 
   const prediction = require(`../molecules/${options.molecule}/prediction.json`);
   const settings = require(`../molecules/${options.molecule}/settings.json`);
-  const spectra = require(`../molecules/${options.molecule}/spectra.json`);
+  const spectra = require(`../molecules/${options.molecule}/spectrum.json`);
 
   const spectraProperties = {
     frequency: 500,
-    from: 0.5,
-    to: 4,
+    from: 3,
+    to: 7.3,
     lineWidth: 1.2,
     nbPoints: 16384,
     maxClusterSize: 8,

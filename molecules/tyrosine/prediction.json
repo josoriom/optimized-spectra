@@ -1,0 +1,182 @@
+[
+    {
+        "atomIDs": [
+            "15"
+        ],
+        "diaIDs": [
+            "dg^L`DikBYrJSQFIKZ]Tt@DQE@Ota@QJh"
+        ],
+        "nbAtoms": 1,
+        "delta": 3.9430,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "16"
+                ],
+                "diaID": "dg^L`FW[BYrJJJIZJr]PTCDIEFD@RDADj`",
+                "coupling": 5.147,
+                "multiplicity": "d",
+                "distance": 3
+            },
+            {
+                "assignment": [
+                    "17"
+                ],
+                "diaID": "dg^L`FW[BYrJJJIZJr]PTCDIEFT@RDADj`",
+                "coupling": 7.877,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "t"
+    },
+    {
+        "atomIDs": [
+            "19",
+            "21"
+        ],
+        "diaIDs": [
+            "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP"
+        ],
+        "nbAtoms": 2,
+        "delta": 6.9075,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "18"
+                ],
+                "diaID": "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh",
+                "coupling": 5.649,
+                "multiplicity": "d",
+                "distance": 3
+            },
+            {
+                "assignment": [
+                    "21"
+                ],
+                "diaID": "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "coupling": 2.445,
+                "multiplicity": "d",
+                "distance": 4
+            },
+            {
+                "assignment": [
+                    "22"
+                ],
+                "diaID": "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh",
+                "coupling": 0.460,
+                "multiplicity": "d",
+                "distance": 5
+            }
+        ],
+        "multiplicity": "ddd"
+    },
+    {
+        "atomIDs": [
+            "18",
+            "22"
+        ],
+        "diaIDs": [
+            "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh"
+        ],
+        "nbAtoms": 2,
+        "delta": 7.2024,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "19"
+                ],
+                "diaID": "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "coupling": 7.981,
+                "multiplicity": "d",
+                "distance": 3
+            },
+            {
+                "assignment": [
+                    "22"
+                ],
+                "diaID": "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh",
+                "coupling": 2.538,
+                "multiplicity": "d",
+                "distance": 4
+            },
+            {
+                "assignment": [
+                    "21"
+                ],
+                "diaID": "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "coupling": 0.311,
+                "multiplicity": "d",
+                "distance": 5
+            }
+        ],
+        "multiplicity": "ddd"
+    },
+    {
+        "atomIDs": [
+            "16"
+        ],
+        "diaIDs": [
+            "dg^L`FW[BYrJJJIZJr]PTCDIEFD@RDADj`"
+        ],
+        "nbAtoms": 1,
+        "delta": 3.1965,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "17"
+                ],
+                "diaID": "dg^L`FW[BYrJJJIZJr]PTCDIEFT@RDADj",
+                "coupling": -14.726,
+                "multiplicity": "d",
+                "distance": 2
+            },
+            {
+                "assignment": [
+                    "15"
+                ],
+                "diaID": "dg^L`DikBYrJSQFIKZ]Tt@DQE@Ota@QJh",
+                "coupling": 5.147,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    },
+    {
+        "atomIDs": [
+            "17"
+        ],
+        "diaIDs": [
+            "dg^L`FW[BYrJJJIZJr]PTCDIEFT@RDADj`"
+        ],
+        "nbAtoms": 1,
+        "delta": 3.0434,
+        "atomLabel": "H",
+        "j": [
+            {
+                "assignment": [
+                    "16"
+                ],
+                "diaID": "dg^L`FW[BYrJJJIZJr]PTCDIEFD@RDADj",
+                "coupling": -14.726,
+                "multiplicity": "d",
+                "distance": 2
+            },
+            {
+                "assignment": [
+                    "15"
+                ],
+                "diaID": "dg^L`DikBYrJSQFIKZ]Tt@DQE@Ota@QJh",
+                "coupling": 7.584,
+                "multiplicity": "d",
+                "distance": 3
+            }
+        ],
+        "multiplicity": "d"
+    }
+]

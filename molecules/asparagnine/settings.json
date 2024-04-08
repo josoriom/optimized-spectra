@@ -1,0 +1,71 @@
+{
+    "iterations": 1,
+    "boundaries": [
+        {
+            "atoms": [
+                "deeL`DffDIgHiMDYUMMDT@RDADj`",
+                "deeL`JXadIgHhhiYTuLdTXPC}HPDRj@"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 4.15,
+                "assessment": 4.15,
+                "lower": 4.05,
+                "upper": 4.25,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "deeL`DffDIgHiMDYUMMDT@RDADj`"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 4.013,
+                "assessment": 4.013,
+                "lower": 3.913,
+                "upper": 4.113,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1"
+            ]
+        },
+        {
+            "atoms": [
+                "deeL`JXadIgHhhiYTuLdTXPC}HPDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.668,
+                "assessment": 2.668,
+                "lower": 2.568,
+                "upper": 2.768,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "deeL`JXadIgHhhiYTuLdTYPC}HPDRj@"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.668,
+                "assessment": 2.668,
+                "lower": 2.568,
+                "upper": 2.768,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3"
+            ]
+        }
+    ]
+}

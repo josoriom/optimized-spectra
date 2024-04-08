@@ -1,0 +1,175 @@
+{
+    "iterations": 1,
+    "boundaries": [
+        {
+            "atoms": [
+                "dg^L`DikBYrJSQFIKZ]Tt@DQE@Ota@QJh",
+                "dg^L`FW[BYrJJJIZJr]PTCDIEFD@RDADj`"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 7.584,
+                "assessment": 7.584,
+                "lower": 9,
+                "upper": 10,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1",
+                "H4"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 8.196,
+                "assessment": 8.196,
+                "lower": 8.096,
+                "upper": 8.296,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2",
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 2.463,
+                "assessment": 2.463,
+                "lower": 2.363,
+                "upper": 2.563,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2",
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP",
+                "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.467,
+                "assessment": 0.467,
+                "lower": 0.367,
+                "upper": 0.567,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2",
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh",
+                "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh"
+            ],
+            "type": "coupling",
+            "value": {
+                "prediction": 0.993,
+                "assessment": 0.993,
+                "lower": 0.893,
+                "upper": 1.093,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3",
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`DikBYrJSQFIKZ]Tt@DQE@Ota@QJh"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 3.682,
+                "assessment": 3.682,
+                "lower": 3.9284,
+                "upper": 3.9579,
+                "selected": true
+            },
+            "atomIDs": [
+                "H1"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`EH{BYRYg]n[hHBjXbZ@_iB@bUP"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 6.705,
+                "assessment": 6.705,
+                "lower": 6.8914,
+                "upper": 6.9235,
+                "selected": true
+            },
+            "atomIDs": [
+                "H2"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`Ed{BYrJJIIZFMtAAULPM@Ota@QJh"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 7.127,
+                "assessment": 7.127,
+                "lower": 7.1854,
+                "upper": 7.2189,
+                "selected": true
+            },
+            "atomIDs": [
+                "H3"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`FW[BYrJJJIZJr]PTCDIEFD@RDADj`"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 3.0285,
+                "assessment": 2.949,
+                "lower": 3.0285,
+                "upper": 3.0770,
+                "selected": true
+            },
+            "atomIDs": [
+                "H4"
+            ]
+        },
+        {
+            "atoms": [
+                "dg^L`FW[BYrJJJIZJr]PTCDIEFT@RDADj`"
+            ],
+            "type": "delta",
+            "value": {
+                "prediction": 2.949,
+                "assessment": 2.949,
+                "lower": 3.1813,
+                "upper": 3.2270,
+                "selected": true
+            },
+            "atomIDs": [
+                "H5"
+            ]
+        }
+    ]
+}

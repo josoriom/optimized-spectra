@@ -8,24 +8,36 @@ const menuOptions = [
     message: 'Select a molecule',
     choices: [
       {
-        name: '1. Coumarin',
-        value: 'coumarin',
-      },
-      {
-        name: '2. Dopamine',
-        value: 'dopamine',
-      },
-      {
-        name: '3. Serotonin',
-        value: 'serotonin',
-      },
-      {
-        name: '4. Valine',
+        name: '1. Valine*',
         value: 'valine',
       },
       {
-        name: '5. Arginine',
+        name: '2. Arginine*',
         value: 'arginine',
+      },
+      {
+        name: '3. Asparagine*',
+        value: 'Asparagine',
+      },
+      {
+        name: '4. Alanine*',
+        value: 'alanine',
+      },
+      {
+        name: '5. Tyrosine*',
+        value: 'tyrosine',
+      },
+      {
+        name: '6. Coumarin',
+        value: 'coumarin',
+      },
+      {
+        name: '7. Dopamine',
+        value: 'dopamine',
+      },
+      {
+        name: '8. Serotonin',
+        value: 'serotonin',
       },
       {
         name: 'Exit',
